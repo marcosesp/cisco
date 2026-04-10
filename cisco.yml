@@ -10,7 +10,7 @@
           - show running-config
       register: output
     - name: Guardar output en archivo local
-       copy:
+      ansible.builtin.copy:
         content: "{{ output.stdout[0] }}"
-        dest: "backup/{{ inventory_hostname }}_running_config.txt"
+        dest: "/home/ansible/backup/{{ inventory_hostname }}_running_config.txt"
       delegate_to: "{{ remote_server }}"
