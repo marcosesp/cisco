@@ -1,0 +1,13 @@
+- name: Obtener running-config de switches Cisco
+  hosts: switches
+  gather_facts: no
+  tasks:
+    - name: Ejecutar show running-config
+      cisco.ios.ios_command:
+        commands:
+          - show running-config
+      register: output
+        #    - name: Guardar output en archivo local
+        #copy:
+        #content: "{{ output.stdout[0] }}"
+        #dest: "./backups/{{ inventory_hostname }}_running_config.txt"

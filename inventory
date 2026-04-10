@@ -1,0 +1,12 @@
+[switches]
+10.0.30.7
+
+[switches:vars]
+ansible_user=ipexdr
+ansible_password=!Pexpert2024#
+ansible_network_os=cisco.ios.ios
+ansible_connection=ansible.netcommon.network_cli
+ansible_become=yes
+ansible_become_method=enable
+ansible_ssh_common_args="-o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa"
+#ansible_become_password=EnablePassword
