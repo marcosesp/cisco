@@ -13,4 +13,4 @@
        copy:
         content: "{{ output.stdout[0] }}"
         dest: "backup/{{ inventory_hostname }}_running_config.txt"
-      delegate_to: aap-cn01.ipexlab.local
+      delegate_to: "{{ remote_server }}"
