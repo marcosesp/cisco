@@ -6,7 +6,16 @@ ansible_user=ipexdr
 ansible_password=!Pexpert2024#
 ansible_network_os=cisco.ios.ios
 ansible_connection=ansible.netcommon.network_cli
+ansible_network_cli_ssh_type=paramiko
 ansible_become=yes
 ansible_become_method=enable
-ansible_ssh_common_args="-o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa"
+#ansible_libssh_hostkeys=+ssh-rsa
+#ansible_network_cli_ssh_type=libssh
+#ansible_libssh_key_exchange_algorithms=+diffie-hellman-group14-sha1,+diffie-hellman-group-exchange-sha1
+#ansible_libssh_host_key_checking=false
+#ansible_libssh_host_key_auto_add=true
+#ansible_ssh_common_args="-o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa"
 #ansible_become_password=EnablePassword
+
+[remote_server]
+aap-cn01.ipexlab.local ansible_host=10.0.32.221
