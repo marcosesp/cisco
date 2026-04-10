@@ -18,4 +18,4 @@ ansible_become_method=enable
 #ansible_become_password=EnablePassword
 
 [remote_server]
-aap-cn01.ipexlab.local ansible_host=10.0.32.221 ansible_user=ansible ansible_connection=ssh
+aap-cn01.ipexlab.local ansible_host=10.0.32.221 
