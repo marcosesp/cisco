@@ -9,8 +9,13 @@
         commands:
           - show running-config
       register: output
+    
+    - name: Generar timestamp
+      ansible.builtin.set_fact:
+        time: "{{ lookup ('ansible.builtin.pipe', 'date +%Y%m%d_%H%M%S') }}"
+
     - name: Guardar output en archivo local
       ansible.builtin.copy:
         content: "{{ output.stdout[0] }}"
-        dest: "/home/ansible/backup/{{ inventory_hostname }}_running_config.txt"
+        dest: "/home/ansible/backup/{{ inventory_hostname }}_config_{{ time }}.txt"
       delegate_to: "{{ remote_server }}"
