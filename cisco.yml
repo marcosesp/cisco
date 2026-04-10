@@ -12,7 +12,7 @@
     
     - name: Generar timestamp
       ansible.builtin.set_fact:
-        time: "{{ lookup ('ansible.builtin.pipe', 'date +%Y/%m/%d_%H-%M-%S') }}"
+        time: "{{ lookup ('ansible.builtin.pipe', 'date +%Y-%m-%d_%H-%M-%S') }}"
 
     - name: Guardar output en archivo local
       ansible.builtin.copy:
